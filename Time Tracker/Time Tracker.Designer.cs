@@ -65,6 +65,19 @@
             this.btn_AddGame = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dg_TimeTable = new System.Windows.Forms.DataGridView();
+            this.timeTakenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deathsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fairieRevivalsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.swordStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.difficultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.variationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pedestalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bs_TimeTable = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.flowLayout_Statistics = new System.Windows.Forms.FlowLayoutPanel();
             this.panel_LeftSideStatistics = new System.Windows.Forms.Panel();
@@ -85,6 +98,8 @@
             this.lbl_StatisticsGoal = new System.Windows.Forms.Label();
             this.cmb_StatisticsLogic = new System.Windows.Forms.ComboBox();
             this.lbl_StatisticsLogic = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_RecordCount = new System.Windows.Forms.Label();
             this.grp_PersonalBest = new System.Windows.Forms.GroupBox();
             this.lbl_PersonalBestFairieRevivals = new System.Windows.Forms.Label();
             this.lbl_PersonalBestFairieRevivalsLabel = new System.Windows.Forms.Label();
@@ -112,21 +127,6 @@
             this.lbl_TotalsItemsLabel = new System.Windows.Forms.Label();
             this.lbl_TotalsTimeLabel = new System.Windows.Forms.Label();
             this.lbl_TotalsTime = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_RecordCount = new System.Windows.Forms.Label();
-            this.timeTakenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deathsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fairieRevivalsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.swordStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.difficultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.variationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pedestalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bs_TimeTable = new System.Windows.Forms.BindingSource(this.components);
             this.tab_Pages.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.flowLayout_EnterTime.SuspendLayout();
@@ -141,15 +141,15 @@
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_TimeTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_TimeTable)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.flowLayout_Statistics.SuspendLayout();
             this.panel_LeftSideStatistics.SuspendLayout();
             this.panel_RightSideStatistics.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.grp_PersonalBest.SuspendLayout();
             this.grp_Average.SuspendLayout();
             this.grp_Totals.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_TimeTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_Pages
@@ -535,6 +535,106 @@
             this.dg_TimeTable.Size = new System.Drawing.Size(490, 258);
             this.dg_TimeTable.TabIndex = 50;
             // 
+            // timeTakenDataGridViewTextBoxColumn
+            // 
+            this.timeTakenDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.timeTakenDataGridViewTextBoxColumn.DataPropertyName = "TimeTaken";
+            this.timeTakenDataGridViewTextBoxColumn.HeaderText = "TimeTaken";
+            this.timeTakenDataGridViewTextBoxColumn.Name = "timeTakenDataGridViewTextBoxColumn";
+            this.timeTakenDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // itemsDataGridViewTextBoxColumn
+            // 
+            this.itemsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
+            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
+            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
+            this.itemsDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // deathsDataGridViewTextBoxColumn
+            // 
+            this.deathsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.deathsDataGridViewTextBoxColumn.DataPropertyName = "Deaths";
+            this.deathsDataGridViewTextBoxColumn.HeaderText = "Deaths";
+            this.deathsDataGridViewTextBoxColumn.Name = "deathsDataGridViewTextBoxColumn";
+            this.deathsDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // fairieRevivalsDataGridViewTextBoxColumn
+            // 
+            this.fairieRevivalsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.fairieRevivalsDataGridViewTextBoxColumn.DataPropertyName = "FairieRevivals";
+            this.fairieRevivalsDataGridViewTextBoxColumn.HeaderText = "Fairies";
+            this.fairieRevivalsDataGridViewTextBoxColumn.Name = "fairieRevivalsDataGridViewTextBoxColumn";
+            this.fairieRevivalsDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // gameStateDataGridViewTextBoxColumn
+            // 
+            this.gameStateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.gameStateDataGridViewTextBoxColumn.DataPropertyName = "GameState";
+            this.gameStateDataGridViewTextBoxColumn.HeaderText = "GameState";
+            this.gameStateDataGridViewTextBoxColumn.Name = "gameStateDataGridViewTextBoxColumn";
+            this.gameStateDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // swordStateDataGridViewTextBoxColumn
+            // 
+            this.swordStateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.swordStateDataGridViewTextBoxColumn.DataPropertyName = "SwordState";
+            this.swordStateDataGridViewTextBoxColumn.HeaderText = "SwordState";
+            this.swordStateDataGridViewTextBoxColumn.Name = "swordStateDataGridViewTextBoxColumn";
+            this.swordStateDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // difficultyDataGridViewTextBoxColumn
+            // 
+            this.difficultyDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.difficultyDataGridViewTextBoxColumn.DataPropertyName = "Difficulty";
+            this.difficultyDataGridViewTextBoxColumn.HeaderText = "Difficulty";
+            this.difficultyDataGridViewTextBoxColumn.Name = "difficultyDataGridViewTextBoxColumn";
+            this.difficultyDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // logicDataGridViewTextBoxColumn
+            // 
+            this.logicDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.logicDataGridViewTextBoxColumn.DataPropertyName = "Logic";
+            this.logicDataGridViewTextBoxColumn.HeaderText = "Logic";
+            this.logicDataGridViewTextBoxColumn.Name = "logicDataGridViewTextBoxColumn";
+            this.logicDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // goalDataGridViewTextBoxColumn
+            // 
+            this.goalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.goalDataGridViewTextBoxColumn.DataPropertyName = "Goal";
+            this.goalDataGridViewTextBoxColumn.HeaderText = "Goal";
+            this.goalDataGridViewTextBoxColumn.Name = "goalDataGridViewTextBoxColumn";
+            this.goalDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // variationDataGridViewTextBoxColumn
+            // 
+            this.variationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.variationDataGridViewTextBoxColumn.DataPropertyName = "Variation";
+            this.variationDataGridViewTextBoxColumn.HeaderText = "Variation";
+            this.variationDataGridViewTextBoxColumn.Name = "variationDataGridViewTextBoxColumn";
+            this.variationDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // placementDataGridViewTextBoxColumn
+            // 
+            this.placementDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.placementDataGridViewTextBoxColumn.DataPropertyName = "Placement";
+            this.placementDataGridViewTextBoxColumn.HeaderText = "Placement";
+            this.placementDataGridViewTextBoxColumn.Name = "placementDataGridViewTextBoxColumn";
+            this.placementDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // pedestalDataGridViewCheckBoxColumn
+            // 
+            this.pedestalDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.pedestalDataGridViewCheckBoxColumn.DataPropertyName = "Pedestal";
+            this.pedestalDataGridViewCheckBoxColumn.HeaderText = "Pedestal";
+            this.pedestalDataGridViewCheckBoxColumn.Name = "pedestalDataGridViewCheckBoxColumn";
+            this.pedestalDataGridViewCheckBoxColumn.Width = 54;
+            // 
+            // bs_TimeTable
+            // 
+            this.bs_TimeTable.DataSource = typeof(Time_Tracker.TimeRecord);
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
@@ -733,6 +833,25 @@
             this.lbl_StatisticsLogic.Size = new System.Drawing.Size(33, 13);
             this.lbl_StatisticsLogic.TabIndex = 77;
             this.lbl_StatisticsLogic.Text = "Logic";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lbl_RecordCount);
+            this.panel2.Location = new System.Drawing.Point(3, 125);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(482, 22);
+            this.panel2.TabIndex = 10;
+            // 
+            // lbl_RecordCount
+            // 
+            this.lbl_RecordCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbl_RecordCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_RecordCount.Location = new System.Drawing.Point(0, 0);
+            this.lbl_RecordCount.Name = "lbl_RecordCount";
+            this.lbl_RecordCount.Size = new System.Drawing.Size(482, 22);
+            this.lbl_RecordCount.TabIndex = 0;
+            this.lbl_RecordCount.Text = "Showing data for 0 games.";
+            this.lbl_RecordCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grp_PersonalBest
             // 
@@ -1013,125 +1132,6 @@
             this.lbl_TotalsTime.TabIndex = 1;
             this.lbl_TotalsTime.Text = "0:00:00.00";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lbl_RecordCount);
-            this.panel2.Location = new System.Drawing.Point(3, 125);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(482, 22);
-            this.panel2.TabIndex = 10;
-            // 
-            // lbl_RecordCount
-            // 
-            this.lbl_RecordCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_RecordCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_RecordCount.Location = new System.Drawing.Point(0, 0);
-            this.lbl_RecordCount.Name = "lbl_RecordCount";
-            this.lbl_RecordCount.Size = new System.Drawing.Size(482, 22);
-            this.lbl_RecordCount.TabIndex = 0;
-            this.lbl_RecordCount.Text = "Showing data for 0 games.";
-            this.lbl_RecordCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timeTakenDataGridViewTextBoxColumn
-            // 
-            this.timeTakenDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.timeTakenDataGridViewTextBoxColumn.DataPropertyName = "TimeTaken";
-            this.timeTakenDataGridViewTextBoxColumn.HeaderText = "TimeTaken";
-            this.timeTakenDataGridViewTextBoxColumn.Name = "timeTakenDataGridViewTextBoxColumn";
-            this.timeTakenDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // itemsDataGridViewTextBoxColumn
-            // 
-            this.itemsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
-            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
-            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
-            this.itemsDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // deathsDataGridViewTextBoxColumn
-            // 
-            this.deathsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.deathsDataGridViewTextBoxColumn.DataPropertyName = "Deaths";
-            this.deathsDataGridViewTextBoxColumn.HeaderText = "Deaths";
-            this.deathsDataGridViewTextBoxColumn.Name = "deathsDataGridViewTextBoxColumn";
-            this.deathsDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // fairieRevivalsDataGridViewTextBoxColumn
-            // 
-            this.fairieRevivalsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.fairieRevivalsDataGridViewTextBoxColumn.DataPropertyName = "FairieRevivals";
-            this.fairieRevivalsDataGridViewTextBoxColumn.HeaderText = "Fairies";
-            this.fairieRevivalsDataGridViewTextBoxColumn.Name = "fairieRevivalsDataGridViewTextBoxColumn";
-            this.fairieRevivalsDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // gameStateDataGridViewTextBoxColumn
-            // 
-            this.gameStateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.gameStateDataGridViewTextBoxColumn.DataPropertyName = "GameState";
-            this.gameStateDataGridViewTextBoxColumn.HeaderText = "GameState";
-            this.gameStateDataGridViewTextBoxColumn.Name = "gameStateDataGridViewTextBoxColumn";
-            this.gameStateDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // swordStateDataGridViewTextBoxColumn
-            // 
-            this.swordStateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.swordStateDataGridViewTextBoxColumn.DataPropertyName = "SwordState";
-            this.swordStateDataGridViewTextBoxColumn.HeaderText = "SwordState";
-            this.swordStateDataGridViewTextBoxColumn.Name = "swordStateDataGridViewTextBoxColumn";
-            this.swordStateDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // difficultyDataGridViewTextBoxColumn
-            // 
-            this.difficultyDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.difficultyDataGridViewTextBoxColumn.DataPropertyName = "Difficulty";
-            this.difficultyDataGridViewTextBoxColumn.HeaderText = "Difficulty";
-            this.difficultyDataGridViewTextBoxColumn.Name = "difficultyDataGridViewTextBoxColumn";
-            this.difficultyDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // logicDataGridViewTextBoxColumn
-            // 
-            this.logicDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.logicDataGridViewTextBoxColumn.DataPropertyName = "Logic";
-            this.logicDataGridViewTextBoxColumn.HeaderText = "Logic";
-            this.logicDataGridViewTextBoxColumn.Name = "logicDataGridViewTextBoxColumn";
-            this.logicDataGridViewTextBoxColumn.Width = 58;
-            // 
-            // goalDataGridViewTextBoxColumn
-            // 
-            this.goalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.goalDataGridViewTextBoxColumn.DataPropertyName = "Goal";
-            this.goalDataGridViewTextBoxColumn.HeaderText = "Goal";
-            this.goalDataGridViewTextBoxColumn.Name = "goalDataGridViewTextBoxColumn";
-            this.goalDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // variationDataGridViewTextBoxColumn
-            // 
-            this.variationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.variationDataGridViewTextBoxColumn.DataPropertyName = "Variation";
-            this.variationDataGridViewTextBoxColumn.HeaderText = "Variation";
-            this.variationDataGridViewTextBoxColumn.Name = "variationDataGridViewTextBoxColumn";
-            this.variationDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // placementDataGridViewTextBoxColumn
-            // 
-            this.placementDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.placementDataGridViewTextBoxColumn.DataPropertyName = "Placement";
-            this.placementDataGridViewTextBoxColumn.HeaderText = "Placement";
-            this.placementDataGridViewTextBoxColumn.Name = "placementDataGridViewTextBoxColumn";
-            this.placementDataGridViewTextBoxColumn.Width = 82;
-            // 
-            // pedestalDataGridViewCheckBoxColumn
-            // 
-            this.pedestalDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.pedestalDataGridViewCheckBoxColumn.DataPropertyName = "Pedestal";
-            this.pedestalDataGridViewCheckBoxColumn.HeaderText = "Pedestal";
-            this.pedestalDataGridViewCheckBoxColumn.Name = "pedestalDataGridViewCheckBoxColumn";
-            this.pedestalDataGridViewCheckBoxColumn.Width = 54;
-            // 
-            // bs_TimeTable
-            // 
-            this.bs_TimeTable.DataSource = typeof(Time_Tracker.TimeRecord);
-            // 
             // TimeTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1159,20 +1159,20 @@
             this.panel1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_TimeTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_TimeTable)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.flowLayout_Statistics.ResumeLayout(false);
             this.panel_LeftSideStatistics.ResumeLayout(false);
             this.panel_LeftSideStatistics.PerformLayout();
             this.panel_RightSideStatistics.ResumeLayout(false);
             this.panel_RightSideStatistics.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.grp_PersonalBest.ResumeLayout(false);
             this.grp_PersonalBest.PerformLayout();
             this.grp_Average.ResumeLayout(false);
             this.grp_Average.PerformLayout();
             this.grp_Totals.ResumeLayout(false);
             this.grp_Totals.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bs_TimeTable)).EndInit();
             this.ResumeLayout(false);
 
         }

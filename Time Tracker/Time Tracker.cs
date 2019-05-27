@@ -159,6 +159,13 @@ namespace Time_Tracker
                 }
 
                 // And update the table.
+                bs_TimeTable.Add(newRecord);
+                dg_TimeTable.Refresh();
+
+                mtxt_FinalTime.Text = "00:00:00.00";
+                numud_ItemCount.Value = 0;
+                numud_Deaths.Value = 0;
+                numud_FairieRevivals.Value = 0;
             }
         }
 
