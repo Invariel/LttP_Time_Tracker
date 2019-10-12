@@ -129,7 +129,7 @@ namespace Time_Tracker
                    $"{goal}," +
                    $"{variation}," +
                    $"{placement}," +
-                   $"{pedestal}" +
+                   $"{pedestal}," +
                    $"{agahnim}";
         }
             
@@ -168,7 +168,7 @@ namespace Time_Tracker
 
         public Boolean IsValid()
         {
-            return timeTaken.Milliseconds > 0 &&
+            return timeTaken.TotalMilliseconds > 0 &&
                    Items > 0 &&
                    CheckArrayValue(TimeTracker.GameStates, GameState) &&
                    CheckArrayValue(TimeTracker.SwordStates, SwordState) &&
