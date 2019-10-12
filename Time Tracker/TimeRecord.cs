@@ -17,6 +17,7 @@ namespace Time_Tracker
         const int ELEMENTS_VARIATION = 9;
         const int ELEMENTS_PLACEMENT = 10;
         const int ELEMENTS_PEDESTAL = 11;
+        const int ELEMENTS_AGAHNIM = 12;
 
         private TimeSpan timeTaken;
         private int items;
@@ -30,6 +31,7 @@ namespace Time_Tracker
         private String variation;
         private String placement;
         private Boolean pedestal;
+        private Boolean agahnim;
 
         public TimeSpan TimeTaken
         {
@@ -103,6 +105,12 @@ namespace Time_Tracker
             set { pedestal = value; }
         }
 
+        public Boolean Agahnim
+        {
+            get { return agahnim; }
+            set { agahnim = value; }
+        }
+
         private Boolean CheckArrayValue(String[] array, String value)
         {
             return (array.ToList<String>().Contains(value));
@@ -121,7 +129,8 @@ namespace Time_Tracker
                    $"{goal}," +
                    $"{variation}," +
                    $"{placement}," +
-                   $"{pedestal}";
+                   $"{pedestal}" +
+                   $"{agahnim}";
         }
             
         internal void Initialize(string lineOfText)
@@ -144,6 +153,17 @@ namespace Time_Tracker
             Placement = elements[ELEMENTS_PLACEMENT];
             Boolean.TryParse(elements[ELEMENTS_PEDESTAL], out bool pedestal);
             Pedestal = pedestal;
+
+            if (elements.Count () > ELEMENTS_AGAHNIM)
+            {
+                Boolean.TryParse(elements[ELEMENTS_AGAHNIM], out bool agahnim);
+                Agahnim = agahnim;
+            }
+            else
+            {
+                agahnim = false;
+            }
+
         }
 
         public Boolean IsValid()

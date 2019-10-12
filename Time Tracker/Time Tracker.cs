@@ -17,6 +17,8 @@ namespace Time_Tracker
         public static readonly Point POINT_DEATHS = new Point(148, 60);
         public static readonly Point POINT_FAIRIES = new Point(148, 82);
 
+        public List<ComboBox> StatisticsComboBoxes = new List<ComboBox>();
+
         #region Standard Options
         public static readonly String[] GameStates = { "Standard", "Open", "Inverted" };
         public static readonly String[] SwordStates = { "Randomized", "Uncle Assured", "Swordless" };
@@ -25,6 +27,7 @@ namespace Time_Tracker
         public static readonly String[] Goals = { "Defeat Ganon", "All Dungeons", "Master Sword Pedestal", "Triforce Pieces" };
         public static readonly String[] Variations = { "None", "Keysanity", "Retro", "Timed Race", "Timed OHKO", "OHKO", "Coop", "Multiworld" };
         public static readonly String[] Placements = { "Randomized", "Plando" };
+        public static readonly string[] Agahnims = { "Yes", "No" };
         public static readonly string[] Pedestals = { "Yes", "No" };
         #endregion Standard Options
 
@@ -50,6 +53,22 @@ namespace Time_Tracker
 
         private void InitializeComboBoxes()
         {
+            foreach (ComboBox comboBox in new ComboBox[]
+                {
+                    cmb_StatisticsDifficulty,
+                    cmb_StatisticsGoal,
+                    cmb_StatisticsLogic,
+                    cmb_StatisticsAgahnim,
+                    cmb_StatisticsPedestal,
+                    cmb_StatisticsPlacement,
+                    cmb_StatisticsGameState,
+                    cmb_StatisticsSwordsState,
+                    cmb_StatisticsVariation,
+                })
+            {
+                StatisticsComboBoxes.Add(comboBox);
+            }
+
             cmb_Difficulty.Items.AddRange(Difficulties);
             cmb_Goal.Items.AddRange(Goals);
             cmb_GameLogic.Items.AddRange(Logics);
@@ -61,20 +80,18 @@ namespace Time_Tracker
             cmb_StatisticsDifficulty.Items.AddRange(Difficulties);
             cmb_StatisticsGoal.Items.AddRange(Goals);
             cmb_StatisticsLogic.Items.AddRange(Logics);
+            cmb_StatisticsAgahnim.Items.AddRange(Agahnims);
             cmb_StatisticsPedestal.Items.AddRange(Pedestals);
             cmb_StatisticsPlacement.Items.AddRange(Placements);
             cmb_StatisticsGameState.Items.AddRange(GameStates);
             cmb_StatisticsSwordsState.Items.AddRange(SwordStates);
             cmb_StatisticsVariation.Items.AddRange(Variations);
 
-            cmb_StatisticsDifficulty.Items.Insert(0, COMBO_DONTCARE);
-            cmb_StatisticsGoal.Items.Insert(0, COMBO_DONTCARE);
-            cmb_StatisticsLogic.Items.Insert(0, COMBO_DONTCARE);
-            cmb_StatisticsPedestal.Items.Insert(0, COMBO_DONTCARE);
-            cmb_StatisticsPlacement.Items.Insert(0, COMBO_DONTCARE);
-            cmb_StatisticsGameState.Items.Insert(0, COMBO_DONTCARE);
-            cmb_StatisticsSwordsState.Items.Insert(0, COMBO_DONTCARE);
-            cmb_StatisticsVariation.Items.Insert(0, COMBO_DONTCARE);
+            foreach (ComboBox comboBox in StatisticsComboBoxes)
+            {
+                comboBox.Items.Insert(0, COMBO_DONTCARE);
+                comboBox.SelectedIndex = 0;
+            }
 
             cmb_GameState.SelectedIndex = 0;
             cmb_Swords.SelectedIndex = 0;
@@ -83,27 +100,14 @@ namespace Time_Tracker
             cmb_Goal.SelectedIndex = 0;
             cmb_Variation.SelectedIndex = 0;
             cmb_Placement.SelectedIndex = 0;
-
-            cmb_StatisticsDifficulty.SelectedIndex = 0;
-            cmb_StatisticsGoal.SelectedIndex = 0;
-            cmb_StatisticsLogic.SelectedIndex = 0;
-            cmb_StatisticsPedestal.SelectedIndex = 0;
-            cmb_StatisticsPlacement.SelectedIndex = 0;
-            cmb_StatisticsGameState.SelectedIndex = 0;
-            cmb_StatisticsSwordsState.SelectedIndex = 0;
-            cmb_StatisticsVariation.SelectedIndex = 0;
         }
 
         private void InitializeStatisticsCallbacks()
         {
-            cmb_StatisticsDifficulty.SelectionChangeCommitted += UpdateStatisticsPage;
-            cmb_StatisticsGoal.SelectionChangeCommitted += UpdateStatisticsPage;
-            cmb_StatisticsLogic.SelectionChangeCommitted += UpdateStatisticsPage;
-            cmb_StatisticsPedestal.SelectionChangeCommitted += UpdateStatisticsPage;
-            cmb_StatisticsPlacement.SelectionChangeCommitted += UpdateStatisticsPage;
-            cmb_StatisticsGameState.SelectionChangeCommitted += UpdateStatisticsPage;
-            cmb_StatisticsSwordsState.SelectionChangeCommitted += UpdateStatisticsPage;
-            cmb_StatisticsVariation.SelectionChangeCommitted += UpdateStatisticsPage;
+            foreach (ComboBox comboBox in StatisticsComboBoxes)
+            {
+                comboBox.SelectionChangeCommitted += UpdateStatisticsPage;
+            }
         }
 
         private void LoadExistingData()
@@ -138,6 +142,7 @@ namespace Time_Tracker
             {
                 TimeRecord newRecord = new TimeRecord()
                 {
+                    Agahnim = chk_Agahnim.Checked,
                     Deaths = Convert.ToInt32(numud_Deaths.Value),
                     Difficulty = cmb_Difficulty.Text,
                     FairieRevivals = Convert.ToInt32(numud_FairieRevivals.Value),
@@ -210,7 +215,8 @@ namespace Time_Tracker
                     (cmb_StatisticsLogic.Text == COMBO_DONTCARE || record.Logic == cmb_StatisticsLogic.Text) &&
                     (cmb_StatisticsGoal.Text == COMBO_DONTCARE || record.Goal == cmb_StatisticsGoal.Text) &&
                     (cmb_StatisticsVariation.Text == COMBO_DONTCARE || record.Variation == cmb_StatisticsVariation.Text) &&
-                    (cmb_StatisticsPedestal.Text == COMBO_DONTCARE || (record.Pedestal && cmb_StatisticsPedestal.Text == "Yes") || (!record.Pedestal && cmb_StatisticsPedestal.Text == "No"))
+                    (cmb_StatisticsPedestal.Text == COMBO_DONTCARE || (record.Pedestal && cmb_StatisticsPedestal.Text == "Yes") || (!record.Pedestal && cmb_StatisticsPedestal.Text == "No")) &&
+                    (cmb_StatisticsAgahnim.Text == COMBO_DONTCARE || (record.Agahnim && cmb_StatisticsAgahnim.Text == "Yes") || (!record.Agahnim && cmb_StatisticsAgahnim.Text == "No"))
                 ).ToList<TimeRecord>();
 
             if (filteredRecords.Count == 0)

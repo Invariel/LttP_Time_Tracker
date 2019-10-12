@@ -65,19 +65,6 @@
             this.btn_AddGame = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dg_TimeTable = new System.Windows.Forms.DataGridView();
-            this.timeTakenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deathsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fairieRevivalsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.swordStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.difficultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.variationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pedestalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bs_TimeTable = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.flowLayout_Statistics = new System.Windows.Forms.FlowLayoutPanel();
             this.panel_LeftSideStatistics = new System.Windows.Forms.Panel();
@@ -127,6 +114,23 @@
             this.lbl_TotalsItemsLabel = new System.Windows.Forms.Label();
             this.lbl_TotalsTimeLabel = new System.Windows.Forms.Label();
             this.lbl_TotalsTime = new System.Windows.Forms.Label();
+            this.chk_Agahnim = new System.Windows.Forms.CheckBox();
+            this.lbl_StatisticsAgahnim = new System.Windows.Forms.Label();
+            this.cmb_StatisticsAgahnim = new System.Windows.Forms.ComboBox();
+            this.bs_TimeTable = new System.Windows.Forms.BindingSource(this.components);
+            this.timeTakenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deathsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fairieRevivalsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.swordStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.difficultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.variationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pedestalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.agahnimDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tab_Pages.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.flowLayout_EnterTime.SuspendLayout();
@@ -141,7 +145,6 @@
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_TimeTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_TimeTable)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.flowLayout_Statistics.SuspendLayout();
             this.panel_LeftSideStatistics.SuspendLayout();
@@ -150,6 +153,7 @@
             this.grp_PersonalBest.SuspendLayout();
             this.grp_Average.SuspendLayout();
             this.grp_Totals.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_TimeTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_Pages
@@ -161,7 +165,7 @@
             this.tab_Pages.Location = new System.Drawing.Point(0, 0);
             this.tab_Pages.Name = "tab_Pages";
             this.tab_Pages.SelectedIndex = 0;
-            this.tab_Pages.Size = new System.Drawing.Size(504, 290);
+            this.tab_Pages.Size = new System.Drawing.Size(504, 314);
             this.tab_Pages.TabIndex = 0;
             // 
             // tabPage1
@@ -171,7 +175,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(496, 264);
+            this.tabPage1.Size = new System.Drawing.Size(496, 288);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Enter Time";
             // 
@@ -186,7 +190,7 @@
             this.flowLayout_EnterTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayout_EnterTime.Location = new System.Drawing.Point(3, 3);
             this.flowLayout_EnterTime.Name = "flowLayout_EnterTime";
-            this.flowLayout_EnterTime.Size = new System.Drawing.Size(490, 258);
+            this.flowLayout_EnterTime.Size = new System.Drawing.Size(490, 282);
             this.flowLayout_EnterTime.TabIndex = 0;
             // 
             // panel_TimeAndItems
@@ -445,6 +449,7 @@
             // 
             // panel_Placement
             // 
+            this.panel_Placement.Controls.Add(this.chk_Agahnim);
             this.panel_Placement.Controls.Add(this.chk_Pedestal);
             this.panel_Placement.Controls.Add(this.lbl_Placement);
             this.panel_Placement.Controls.Add(this.cmb_Placement);
@@ -459,7 +464,7 @@
             this.chk_Pedestal.Location = new System.Drawing.Point(379, 7);
             this.chk_Pedestal.Name = "chk_Pedestal";
             this.chk_Pedestal.Size = new System.Drawing.Size(101, 17);
-            this.chk_Pedestal.TabIndex = 24;
+            this.chk_Pedestal.TabIndex = 25;
             this.chk_Pedestal.Text = "Pedestal Seed?";
             this.chk_Pedestal.UseVisualStyleBackColor = true;
             // 
@@ -496,7 +501,7 @@
             this.btn_AddGame.Location = new System.Drawing.Point(312, 0);
             this.btn_AddGame.Name = "btn_AddGame";
             this.btn_AddGame.Size = new System.Drawing.Size(172, 30);
-            this.btn_AddGame.TabIndex = 25;
+            this.btn_AddGame.TabIndex = 26;
             this.btn_AddGame.Text = "A&dd Game";
             this.btn_AddGame.UseVisualStyleBackColor = true;
             // 
@@ -507,7 +512,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(496, 264);
+            this.tabPage2.Size = new System.Drawing.Size(496, 288);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Time Table";
             // 
@@ -527,13 +532,545 @@
             this.goalDataGridViewTextBoxColumn,
             this.variationDataGridViewTextBoxColumn,
             this.placementDataGridViewTextBoxColumn,
-            this.pedestalDataGridViewCheckBoxColumn});
+            this.pedestalDataGridViewCheckBoxColumn,
+            this.agahnimDataGridViewCheckBoxColumn});
             this.dg_TimeTable.DataSource = this.bs_TimeTable;
             this.dg_TimeTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dg_TimeTable.Location = new System.Drawing.Point(3, 3);
             this.dg_TimeTable.Name = "dg_TimeTable";
-            this.dg_TimeTable.Size = new System.Drawing.Size(490, 258);
+            this.dg_TimeTable.Size = new System.Drawing.Size(490, 282);
             this.dg_TimeTable.TabIndex = 50;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.flowLayout_Statistics);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(496, 288);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Statistics";
+            // 
+            // flowLayout_Statistics
+            // 
+            this.flowLayout_Statistics.Controls.Add(this.panel_LeftSideStatistics);
+            this.flowLayout_Statistics.Controls.Add(this.panel_RightSideStatistics);
+            this.flowLayout_Statistics.Controls.Add(this.panel2);
+            this.flowLayout_Statistics.Controls.Add(this.grp_PersonalBest);
+            this.flowLayout_Statistics.Controls.Add(this.grp_Average);
+            this.flowLayout_Statistics.Controls.Add(this.grp_Totals);
+            this.flowLayout_Statistics.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayout_Statistics.Location = new System.Drawing.Point(3, 3);
+            this.flowLayout_Statistics.Name = "flowLayout_Statistics";
+            this.flowLayout_Statistics.Size = new System.Drawing.Size(490, 282);
+            this.flowLayout_Statistics.TabIndex = 0;
+            // 
+            // panel_LeftSideStatistics
+            // 
+            this.panel_LeftSideStatistics.Controls.Add(this.cmb_StatisticsPlacement);
+            this.panel_LeftSideStatistics.Controls.Add(this.lbl_StatisticsPlacement);
+            this.panel_LeftSideStatistics.Controls.Add(this.cmb_StatisticsDifficulty);
+            this.panel_LeftSideStatistics.Controls.Add(this.lbl_StatisticsDifficulty);
+            this.panel_LeftSideStatistics.Controls.Add(this.cmb_StatisticsSwordsState);
+            this.panel_LeftSideStatistics.Controls.Add(this.lbl_StatisticsSwords);
+            this.panel_LeftSideStatistics.Controls.Add(this.cmb_StatisticsGameState);
+            this.panel_LeftSideStatistics.Controls.Add(this.lbl_StatisticsState);
+            this.panel_LeftSideStatistics.Location = new System.Drawing.Point(3, 3);
+            this.panel_LeftSideStatistics.Name = "panel_LeftSideStatistics";
+            this.panel_LeftSideStatistics.Size = new System.Drawing.Size(239, 141);
+            this.panel_LeftSideStatistics.TabIndex = 0;
+            // 
+            // cmb_StatisticsPlacement
+            // 
+            this.cmb_StatisticsPlacement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsPlacement.FormattingEnabled = true;
+            this.cmb_StatisticsPlacement.Location = new System.Drawing.Point(66, 88);
+            this.cmb_StatisticsPlacement.Name = "cmb_StatisticsPlacement";
+            this.cmb_StatisticsPlacement.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsPlacement.TabIndex = 88;
+            // 
+            // lbl_StatisticsPlacement
+            // 
+            this.lbl_StatisticsPlacement.AutoSize = true;
+            this.lbl_StatisticsPlacement.Location = new System.Drawing.Point(3, 92);
+            this.lbl_StatisticsPlacement.Name = "lbl_StatisticsPlacement";
+            this.lbl_StatisticsPlacement.Size = new System.Drawing.Size(57, 13);
+            this.lbl_StatisticsPlacement.TabIndex = 87;
+            this.lbl_StatisticsPlacement.Text = "Placement";
+            // 
+            // cmb_StatisticsDifficulty
+            // 
+            this.cmb_StatisticsDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsDifficulty.FormattingEnabled = true;
+            this.cmb_StatisticsDifficulty.Location = new System.Drawing.Point(66, 61);
+            this.cmb_StatisticsDifficulty.Name = "cmb_StatisticsDifficulty";
+            this.cmb_StatisticsDifficulty.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsDifficulty.TabIndex = 84;
+            // 
+            // lbl_StatisticsDifficulty
+            // 
+            this.lbl_StatisticsDifficulty.AutoSize = true;
+            this.lbl_StatisticsDifficulty.Location = new System.Drawing.Point(13, 65);
+            this.lbl_StatisticsDifficulty.Name = "lbl_StatisticsDifficulty";
+            this.lbl_StatisticsDifficulty.Size = new System.Drawing.Size(47, 13);
+            this.lbl_StatisticsDifficulty.TabIndex = 83;
+            this.lbl_StatisticsDifficulty.Text = "Difficulty";
+            // 
+            // cmb_StatisticsSwordsState
+            // 
+            this.cmb_StatisticsSwordsState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsSwordsState.FormattingEnabled = true;
+            this.cmb_StatisticsSwordsState.Location = new System.Drawing.Point(66, 34);
+            this.cmb_StatisticsSwordsState.Name = "cmb_StatisticsSwordsState";
+            this.cmb_StatisticsSwordsState.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsSwordsState.TabIndex = 80;
+            // 
+            // lbl_StatisticsSwords
+            // 
+            this.lbl_StatisticsSwords.AutoSize = true;
+            this.lbl_StatisticsSwords.Location = new System.Drawing.Point(18, 38);
+            this.lbl_StatisticsSwords.Name = "lbl_StatisticsSwords";
+            this.lbl_StatisticsSwords.Size = new System.Drawing.Size(42, 13);
+            this.lbl_StatisticsSwords.TabIndex = 79;
+            this.lbl_StatisticsSwords.Text = "Swords";
+            // 
+            // cmb_StatisticsGameState
+            // 
+            this.cmb_StatisticsGameState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsGameState.FormattingEnabled = true;
+            this.cmb_StatisticsGameState.Location = new System.Drawing.Point(66, 7);
+            this.cmb_StatisticsGameState.Name = "cmb_StatisticsGameState";
+            this.cmb_StatisticsGameState.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsGameState.TabIndex = 76;
+            // 
+            // lbl_StatisticsState
+            // 
+            this.lbl_StatisticsState.AutoSize = true;
+            this.lbl_StatisticsState.Location = new System.Drawing.Point(28, 11);
+            this.lbl_StatisticsState.Name = "lbl_StatisticsState";
+            this.lbl_StatisticsState.Size = new System.Drawing.Size(32, 13);
+            this.lbl_StatisticsState.TabIndex = 75;
+            this.lbl_StatisticsState.Text = "State";
+            // 
+            // panel_RightSideStatistics
+            // 
+            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsAgahnim);
+            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsAgahnim);
+            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsPedestal);
+            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsPedestal);
+            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsVariation);
+            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsVariation);
+            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsGoal);
+            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsGoal);
+            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsLogic);
+            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsLogic);
+            this.panel_RightSideStatistics.Location = new System.Drawing.Point(248, 3);
+            this.panel_RightSideStatistics.Name = "panel_RightSideStatistics";
+            this.panel_RightSideStatistics.Size = new System.Drawing.Size(239, 141);
+            this.panel_RightSideStatistics.TabIndex = 1;
+            // 
+            // cmb_StatisticsPedestal
+            // 
+            this.cmb_StatisticsPedestal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsPedestal.FormattingEnabled = true;
+            this.cmb_StatisticsPedestal.Location = new System.Drawing.Point(66, 89);
+            this.cmb_StatisticsPedestal.Name = "cmb_StatisticsPedestal";
+            this.cmb_StatisticsPedestal.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsPedestal.TabIndex = 90;
+            // 
+            // lbl_StatisticsPedestal
+            // 
+            this.lbl_StatisticsPedestal.AutoSize = true;
+            this.lbl_StatisticsPedestal.Location = new System.Drawing.Point(12, 93);
+            this.lbl_StatisticsPedestal.Name = "lbl_StatisticsPedestal";
+            this.lbl_StatisticsPedestal.Size = new System.Drawing.Size(48, 13);
+            this.lbl_StatisticsPedestal.TabIndex = 89;
+            this.lbl_StatisticsPedestal.Text = "Pedestal";
+            // 
+            // cmb_StatisticsVariation
+            // 
+            this.cmb_StatisticsVariation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsVariation.FormattingEnabled = true;
+            this.cmb_StatisticsVariation.Location = new System.Drawing.Point(66, 61);
+            this.cmb_StatisticsVariation.Name = "cmb_StatisticsVariation";
+            this.cmb_StatisticsVariation.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsVariation.TabIndex = 86;
+            // 
+            // lbl_StatisticsVariation
+            // 
+            this.lbl_StatisticsVariation.AutoSize = true;
+            this.lbl_StatisticsVariation.Location = new System.Drawing.Point(12, 65);
+            this.lbl_StatisticsVariation.Name = "lbl_StatisticsVariation";
+            this.lbl_StatisticsVariation.Size = new System.Drawing.Size(48, 13);
+            this.lbl_StatisticsVariation.TabIndex = 85;
+            this.lbl_StatisticsVariation.Text = "Variation";
+            // 
+            // cmb_StatisticsGoal
+            // 
+            this.cmb_StatisticsGoal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsGoal.FormattingEnabled = true;
+            this.cmb_StatisticsGoal.Location = new System.Drawing.Point(66, 34);
+            this.cmb_StatisticsGoal.Name = "cmb_StatisticsGoal";
+            this.cmb_StatisticsGoal.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsGoal.TabIndex = 82;
+            // 
+            // lbl_StatisticsGoal
+            // 
+            this.lbl_StatisticsGoal.AutoSize = true;
+            this.lbl_StatisticsGoal.Location = new System.Drawing.Point(31, 38);
+            this.lbl_StatisticsGoal.Name = "lbl_StatisticsGoal";
+            this.lbl_StatisticsGoal.Size = new System.Drawing.Size(29, 13);
+            this.lbl_StatisticsGoal.TabIndex = 81;
+            this.lbl_StatisticsGoal.Text = "Goal";
+            // 
+            // cmb_StatisticsLogic
+            // 
+            this.cmb_StatisticsLogic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsLogic.FormattingEnabled = true;
+            this.cmb_StatisticsLogic.Location = new System.Drawing.Point(66, 7);
+            this.cmb_StatisticsLogic.Name = "cmb_StatisticsLogic";
+            this.cmb_StatisticsLogic.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsLogic.TabIndex = 78;
+            // 
+            // lbl_StatisticsLogic
+            // 
+            this.lbl_StatisticsLogic.AutoSize = true;
+            this.lbl_StatisticsLogic.Location = new System.Drawing.Point(27, 11);
+            this.lbl_StatisticsLogic.Name = "lbl_StatisticsLogic";
+            this.lbl_StatisticsLogic.Size = new System.Drawing.Size(33, 13);
+            this.lbl_StatisticsLogic.TabIndex = 77;
+            this.lbl_StatisticsLogic.Text = "Logic";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lbl_RecordCount);
+            this.panel2.Location = new System.Drawing.Point(3, 150);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(482, 22);
+            this.panel2.TabIndex = 10;
+            // 
+            // lbl_RecordCount
+            // 
+            this.lbl_RecordCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbl_RecordCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_RecordCount.Location = new System.Drawing.Point(0, 0);
+            this.lbl_RecordCount.Name = "lbl_RecordCount";
+            this.lbl_RecordCount.Size = new System.Drawing.Size(482, 22);
+            this.lbl_RecordCount.TabIndex = 0;
+            this.lbl_RecordCount.Text = "Showing data for 0 games.";
+            this.lbl_RecordCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // grp_PersonalBest
+            // 
+            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestFairieRevivals);
+            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestFairieRevivalsLabel);
+            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestDeaths);
+            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestDeathsLabel);
+            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestItems);
+            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestItemsLabel);
+            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestTimeLabel);
+            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestTime);
+            this.grp_PersonalBest.Location = new System.Drawing.Point(3, 178);
+            this.grp_PersonalBest.Name = "grp_PersonalBest";
+            this.grp_PersonalBest.Size = new System.Drawing.Size(157, 100);
+            this.grp_PersonalBest.TabIndex = 2;
+            this.grp_PersonalBest.TabStop = false;
+            this.grp_PersonalBest.Text = "Personal Best";
+            // 
+            // lbl_PersonalBestFairieRevivals
+            // 
+            this.lbl_PersonalBestFairieRevivals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_PersonalBestFairieRevivals.AutoSize = true;
+            this.lbl_PersonalBestFairieRevivals.Location = new System.Drawing.Point(135, 82);
+            this.lbl_PersonalBestFairieRevivals.Name = "lbl_PersonalBestFairieRevivals";
+            this.lbl_PersonalBestFairieRevivals.Size = new System.Drawing.Size(13, 13);
+            this.lbl_PersonalBestFairieRevivals.TabIndex = 7;
+            this.lbl_PersonalBestFairieRevivals.Text = "0";
+            // 
+            // lbl_PersonalBestFairieRevivalsLabel
+            // 
+            this.lbl_PersonalBestFairieRevivalsLabel.AutoSize = true;
+            this.lbl_PersonalBestFairieRevivalsLabel.Location = new System.Drawing.Point(6, 82);
+            this.lbl_PersonalBestFairieRevivalsLabel.Name = "lbl_PersonalBestFairieRevivalsLabel";
+            this.lbl_PersonalBestFairieRevivalsLabel.Size = new System.Drawing.Size(76, 13);
+            this.lbl_PersonalBestFairieRevivalsLabel.TabIndex = 6;
+            this.lbl_PersonalBestFairieRevivalsLabel.Text = "Fairie Revivals";
+            // 
+            // lbl_PersonalBestDeaths
+            // 
+            this.lbl_PersonalBestDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_PersonalBestDeaths.AutoSize = true;
+            this.lbl_PersonalBestDeaths.Location = new System.Drawing.Point(135, 60);
+            this.lbl_PersonalBestDeaths.Name = "lbl_PersonalBestDeaths";
+            this.lbl_PersonalBestDeaths.Size = new System.Drawing.Size(13, 13);
+            this.lbl_PersonalBestDeaths.TabIndex = 5;
+            this.lbl_PersonalBestDeaths.Text = "0";
+            // 
+            // lbl_PersonalBestDeathsLabel
+            // 
+            this.lbl_PersonalBestDeathsLabel.AutoSize = true;
+            this.lbl_PersonalBestDeathsLabel.Location = new System.Drawing.Point(6, 60);
+            this.lbl_PersonalBestDeathsLabel.Name = "lbl_PersonalBestDeathsLabel";
+            this.lbl_PersonalBestDeathsLabel.Size = new System.Drawing.Size(41, 13);
+            this.lbl_PersonalBestDeathsLabel.TabIndex = 4;
+            this.lbl_PersonalBestDeathsLabel.Text = "Deaths";
+            // 
+            // lbl_PersonalBestItems
+            // 
+            this.lbl_PersonalBestItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_PersonalBestItems.AutoSize = true;
+            this.lbl_PersonalBestItems.Location = new System.Drawing.Point(112, 38);
+            this.lbl_PersonalBestItems.Name = "lbl_PersonalBestItems";
+            this.lbl_PersonalBestItems.Size = new System.Drawing.Size(36, 13);
+            this.lbl_PersonalBestItems.TabIndex = 3;
+            this.lbl_PersonalBestItems.Text = "0/216";
+            // 
+            // lbl_PersonalBestItemsLabel
+            // 
+            this.lbl_PersonalBestItemsLabel.AutoSize = true;
+            this.lbl_PersonalBestItemsLabel.Location = new System.Drawing.Point(6, 38);
+            this.lbl_PersonalBestItemsLabel.Name = "lbl_PersonalBestItemsLabel";
+            this.lbl_PersonalBestItemsLabel.Size = new System.Drawing.Size(32, 13);
+            this.lbl_PersonalBestItemsLabel.TabIndex = 2;
+            this.lbl_PersonalBestItemsLabel.Text = "Items";
+            // 
+            // lbl_PersonalBestTimeLabel
+            // 
+            this.lbl_PersonalBestTimeLabel.AutoSize = true;
+            this.lbl_PersonalBestTimeLabel.Location = new System.Drawing.Point(6, 16);
+            this.lbl_PersonalBestTimeLabel.Name = "lbl_PersonalBestTimeLabel";
+            this.lbl_PersonalBestTimeLabel.Size = new System.Drawing.Size(30, 13);
+            this.lbl_PersonalBestTimeLabel.TabIndex = 0;
+            this.lbl_PersonalBestTimeLabel.Text = "Time";
+            // 
+            // lbl_PersonalBestTime
+            // 
+            this.lbl_PersonalBestTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_PersonalBestTime.AutoSize = true;
+            this.lbl_PersonalBestTime.Location = new System.Drawing.Point(90, 16);
+            this.lbl_PersonalBestTime.Name = "lbl_PersonalBestTime";
+            this.lbl_PersonalBestTime.Size = new System.Drawing.Size(58, 13);
+            this.lbl_PersonalBestTime.TabIndex = 1;
+            this.lbl_PersonalBestTime.Text = "0:00:00.00";
+            // 
+            // grp_Average
+            // 
+            this.grp_Average.Controls.Add(this.lbl_AveragesFairieRevivals);
+            this.grp_Average.Controls.Add(this.lbl_AveragesFairieRevivalsLabel);
+            this.grp_Average.Controls.Add(this.lbl_AveragesDeaths);
+            this.grp_Average.Controls.Add(this.lbl_AveragesDeathsLabel);
+            this.grp_Average.Controls.Add(this.lbl_AveragesItems);
+            this.grp_Average.Controls.Add(this.lbl_AveragesItemsLabel);
+            this.grp_Average.Controls.Add(this.lbl_AveragesTimeLabel);
+            this.grp_Average.Controls.Add(this.lbl_AveragesTime);
+            this.grp_Average.Location = new System.Drawing.Point(166, 178);
+            this.grp_Average.Name = "grp_Average";
+            this.grp_Average.Size = new System.Drawing.Size(157, 100);
+            this.grp_Average.TabIndex = 8;
+            this.grp_Average.TabStop = false;
+            this.grp_Average.Text = "Averages";
+            // 
+            // lbl_AveragesFairieRevivals
+            // 
+            this.lbl_AveragesFairieRevivals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_AveragesFairieRevivals.AutoSize = true;
+            this.lbl_AveragesFairieRevivals.Location = new System.Drawing.Point(135, 82);
+            this.lbl_AveragesFairieRevivals.Name = "lbl_AveragesFairieRevivals";
+            this.lbl_AveragesFairieRevivals.Size = new System.Drawing.Size(13, 13);
+            this.lbl_AveragesFairieRevivals.TabIndex = 7;
+            this.lbl_AveragesFairieRevivals.Text = "0";
+            // 
+            // lbl_AveragesFairieRevivalsLabel
+            // 
+            this.lbl_AveragesFairieRevivalsLabel.AutoSize = true;
+            this.lbl_AveragesFairieRevivalsLabel.Location = new System.Drawing.Point(6, 82);
+            this.lbl_AveragesFairieRevivalsLabel.Name = "lbl_AveragesFairieRevivalsLabel";
+            this.lbl_AveragesFairieRevivalsLabel.Size = new System.Drawing.Size(76, 13);
+            this.lbl_AveragesFairieRevivalsLabel.TabIndex = 6;
+            this.lbl_AveragesFairieRevivalsLabel.Text = "Fairie Revivals";
+            // 
+            // lbl_AveragesDeaths
+            // 
+            this.lbl_AveragesDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_AveragesDeaths.AutoSize = true;
+            this.lbl_AveragesDeaths.Location = new System.Drawing.Point(135, 60);
+            this.lbl_AveragesDeaths.Name = "lbl_AveragesDeaths";
+            this.lbl_AveragesDeaths.Size = new System.Drawing.Size(13, 13);
+            this.lbl_AveragesDeaths.TabIndex = 5;
+            this.lbl_AveragesDeaths.Text = "0";
+            // 
+            // lbl_AveragesDeathsLabel
+            // 
+            this.lbl_AveragesDeathsLabel.AutoSize = true;
+            this.lbl_AveragesDeathsLabel.Location = new System.Drawing.Point(6, 60);
+            this.lbl_AveragesDeathsLabel.Name = "lbl_AveragesDeathsLabel";
+            this.lbl_AveragesDeathsLabel.Size = new System.Drawing.Size(41, 13);
+            this.lbl_AveragesDeathsLabel.TabIndex = 4;
+            this.lbl_AveragesDeathsLabel.Text = "Deaths";
+            // 
+            // lbl_AveragesItems
+            // 
+            this.lbl_AveragesItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_AveragesItems.AutoSize = true;
+            this.lbl_AveragesItems.Location = new System.Drawing.Point(112, 38);
+            this.lbl_AveragesItems.Name = "lbl_AveragesItems";
+            this.lbl_AveragesItems.Size = new System.Drawing.Size(36, 13);
+            this.lbl_AveragesItems.TabIndex = 3;
+            this.lbl_AveragesItems.Text = "0/216";
+            // 
+            // lbl_AveragesItemsLabel
+            // 
+            this.lbl_AveragesItemsLabel.AutoSize = true;
+            this.lbl_AveragesItemsLabel.Location = new System.Drawing.Point(6, 38);
+            this.lbl_AveragesItemsLabel.Name = "lbl_AveragesItemsLabel";
+            this.lbl_AveragesItemsLabel.Size = new System.Drawing.Size(32, 13);
+            this.lbl_AveragesItemsLabel.TabIndex = 2;
+            this.lbl_AveragesItemsLabel.Text = "Items";
+            // 
+            // lbl_AveragesTimeLabel
+            // 
+            this.lbl_AveragesTimeLabel.AutoSize = true;
+            this.lbl_AveragesTimeLabel.Location = new System.Drawing.Point(6, 16);
+            this.lbl_AveragesTimeLabel.Name = "lbl_AveragesTimeLabel";
+            this.lbl_AveragesTimeLabel.Size = new System.Drawing.Size(30, 13);
+            this.lbl_AveragesTimeLabel.TabIndex = 0;
+            this.lbl_AveragesTimeLabel.Text = "Time";
+            // 
+            // lbl_AveragesTime
+            // 
+            this.lbl_AveragesTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_AveragesTime.AutoSize = true;
+            this.lbl_AveragesTime.Location = new System.Drawing.Point(90, 16);
+            this.lbl_AveragesTime.Name = "lbl_AveragesTime";
+            this.lbl_AveragesTime.Size = new System.Drawing.Size(58, 13);
+            this.lbl_AveragesTime.TabIndex = 1;
+            this.lbl_AveragesTime.Text = "0:00:00.00";
+            // 
+            // grp_Totals
+            // 
+            this.grp_Totals.Controls.Add(this.lbl_TotalsFairieRevivals);
+            this.grp_Totals.Controls.Add(this.lbl_TotalsFairieRevivalsLabel);
+            this.grp_Totals.Controls.Add(this.lbl_TotalsDeaths);
+            this.grp_Totals.Controls.Add(this.lbl_TotalsDeathsLabel);
+            this.grp_Totals.Controls.Add(this.lbl_TotalsItems);
+            this.grp_Totals.Controls.Add(this.lbl_TotalsItemsLabel);
+            this.grp_Totals.Controls.Add(this.lbl_TotalsTimeLabel);
+            this.grp_Totals.Controls.Add(this.lbl_TotalsTime);
+            this.grp_Totals.Location = new System.Drawing.Point(329, 178);
+            this.grp_Totals.Name = "grp_Totals";
+            this.grp_Totals.Size = new System.Drawing.Size(157, 100);
+            this.grp_Totals.TabIndex = 9;
+            this.grp_Totals.TabStop = false;
+            this.grp_Totals.Text = "Totals";
+            // 
+            // lbl_TotalsFairieRevivals
+            // 
+            this.lbl_TotalsFairieRevivals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_TotalsFairieRevivals.AutoSize = true;
+            this.lbl_TotalsFairieRevivals.Location = new System.Drawing.Point(135, 82);
+            this.lbl_TotalsFairieRevivals.Name = "lbl_TotalsFairieRevivals";
+            this.lbl_TotalsFairieRevivals.Size = new System.Drawing.Size(13, 13);
+            this.lbl_TotalsFairieRevivals.TabIndex = 7;
+            this.lbl_TotalsFairieRevivals.Text = "0";
+            // 
+            // lbl_TotalsFairieRevivalsLabel
+            // 
+            this.lbl_TotalsFairieRevivalsLabel.AutoSize = true;
+            this.lbl_TotalsFairieRevivalsLabel.Location = new System.Drawing.Point(6, 82);
+            this.lbl_TotalsFairieRevivalsLabel.Name = "lbl_TotalsFairieRevivalsLabel";
+            this.lbl_TotalsFairieRevivalsLabel.Size = new System.Drawing.Size(76, 13);
+            this.lbl_TotalsFairieRevivalsLabel.TabIndex = 6;
+            this.lbl_TotalsFairieRevivalsLabel.Text = "Fairie Revivals";
+            // 
+            // lbl_TotalsDeaths
+            // 
+            this.lbl_TotalsDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_TotalsDeaths.AutoSize = true;
+            this.lbl_TotalsDeaths.Location = new System.Drawing.Point(135, 60);
+            this.lbl_TotalsDeaths.Name = "lbl_TotalsDeaths";
+            this.lbl_TotalsDeaths.Size = new System.Drawing.Size(13, 13);
+            this.lbl_TotalsDeaths.TabIndex = 5;
+            this.lbl_TotalsDeaths.Text = "0";
+            // 
+            // lbl_TotalsDeathsLabel
+            // 
+            this.lbl_TotalsDeathsLabel.AutoSize = true;
+            this.lbl_TotalsDeathsLabel.Location = new System.Drawing.Point(6, 60);
+            this.lbl_TotalsDeathsLabel.Name = "lbl_TotalsDeathsLabel";
+            this.lbl_TotalsDeathsLabel.Size = new System.Drawing.Size(41, 13);
+            this.lbl_TotalsDeathsLabel.TabIndex = 4;
+            this.lbl_TotalsDeathsLabel.Text = "Deaths";
+            // 
+            // lbl_TotalsItems
+            // 
+            this.lbl_TotalsItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_TotalsItems.AutoSize = true;
+            this.lbl_TotalsItems.Location = new System.Drawing.Point(135, 38);
+            this.lbl_TotalsItems.Name = "lbl_TotalsItems";
+            this.lbl_TotalsItems.Size = new System.Drawing.Size(13, 13);
+            this.lbl_TotalsItems.TabIndex = 3;
+            this.lbl_TotalsItems.Text = "0";
+            // 
+            // lbl_TotalsItemsLabel
+            // 
+            this.lbl_TotalsItemsLabel.AutoSize = true;
+            this.lbl_TotalsItemsLabel.Location = new System.Drawing.Point(6, 38);
+            this.lbl_TotalsItemsLabel.Name = "lbl_TotalsItemsLabel";
+            this.lbl_TotalsItemsLabel.Size = new System.Drawing.Size(32, 13);
+            this.lbl_TotalsItemsLabel.TabIndex = 2;
+            this.lbl_TotalsItemsLabel.Text = "Items";
+            // 
+            // lbl_TotalsTimeLabel
+            // 
+            this.lbl_TotalsTimeLabel.AutoSize = true;
+            this.lbl_TotalsTimeLabel.Location = new System.Drawing.Point(6, 16);
+            this.lbl_TotalsTimeLabel.Name = "lbl_TotalsTimeLabel";
+            this.lbl_TotalsTimeLabel.Size = new System.Drawing.Size(30, 13);
+            this.lbl_TotalsTimeLabel.TabIndex = 0;
+            this.lbl_TotalsTimeLabel.Text = "Time";
+            // 
+            // lbl_TotalsTime
+            // 
+            this.lbl_TotalsTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_TotalsTime.AutoSize = true;
+            this.lbl_TotalsTime.Location = new System.Drawing.Point(90, 16);
+            this.lbl_TotalsTime.Name = "lbl_TotalsTime";
+            this.lbl_TotalsTime.Size = new System.Drawing.Size(58, 13);
+            this.lbl_TotalsTime.TabIndex = 1;
+            this.lbl_TotalsTime.Text = "0:00:00.00";
+            // 
+            // chk_Agahnim
+            // 
+            this.chk_Agahnim.AutoSize = true;
+            this.chk_Agahnim.Location = new System.Drawing.Point(258, 7);
+            this.chk_Agahnim.Name = "chk_Agahnim";
+            this.chk_Agahnim.Size = new System.Drawing.Size(95, 17);
+            this.chk_Agahnim.TabIndex = 24;
+            this.chk_Agahnim.Text = "Killed Agahnim";
+            this.chk_Agahnim.UseVisualStyleBackColor = true;
+            // 
+            // lbl_StatisticsAgahnim
+            // 
+            this.lbl_StatisticsAgahnim.AutoSize = true;
+            this.lbl_StatisticsAgahnim.Location = new System.Drawing.Point(12, 120);
+            this.lbl_StatisticsAgahnim.Name = "lbl_StatisticsAgahnim";
+            this.lbl_StatisticsAgahnim.Size = new System.Drawing.Size(48, 13);
+            this.lbl_StatisticsAgahnim.TabIndex = 89;
+            this.lbl_StatisticsAgahnim.Text = "Agahnim";
+            // 
+            // cmb_StatisticsAgahnim
+            // 
+            this.cmb_StatisticsAgahnim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_StatisticsAgahnim.FormattingEnabled = true;
+            this.cmb_StatisticsAgahnim.Location = new System.Drawing.Point(66, 116);
+            this.cmb_StatisticsAgahnim.Name = "cmb_StatisticsAgahnim";
+            this.cmb_StatisticsAgahnim.Size = new System.Drawing.Size(167, 21);
+            this.cmb_StatisticsAgahnim.TabIndex = 90;
+            // 
+            // bs_TimeTable
+            // 
+            this.bs_TimeTable.DataSource = typeof(Time_Tracker.TimeRecord);
             // 
             // timeTakenDataGridViewTextBoxColumn
             // 
@@ -631,512 +1168,19 @@
             this.pedestalDataGridViewCheckBoxColumn.Name = "pedestalDataGridViewCheckBoxColumn";
             this.pedestalDataGridViewCheckBoxColumn.Width = 54;
             // 
-            // bs_TimeTable
-            // 
-            this.bs_TimeTable.DataSource = typeof(Time_Tracker.TimeRecord);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.flowLayout_Statistics);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(496, 264);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Statistics";
-            // 
-            // flowLayout_Statistics
-            // 
-            this.flowLayout_Statistics.Controls.Add(this.panel_LeftSideStatistics);
-            this.flowLayout_Statistics.Controls.Add(this.panel_RightSideStatistics);
-            this.flowLayout_Statistics.Controls.Add(this.panel2);
-            this.flowLayout_Statistics.Controls.Add(this.grp_PersonalBest);
-            this.flowLayout_Statistics.Controls.Add(this.grp_Average);
-            this.flowLayout_Statistics.Controls.Add(this.grp_Totals);
-            this.flowLayout_Statistics.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayout_Statistics.Location = new System.Drawing.Point(3, 3);
-            this.flowLayout_Statistics.Name = "flowLayout_Statistics";
-            this.flowLayout_Statistics.Size = new System.Drawing.Size(490, 258);
-            this.flowLayout_Statistics.TabIndex = 0;
-            // 
-            // panel_LeftSideStatistics
-            // 
-            this.panel_LeftSideStatistics.Controls.Add(this.cmb_StatisticsPlacement);
-            this.panel_LeftSideStatistics.Controls.Add(this.lbl_StatisticsPlacement);
-            this.panel_LeftSideStatistics.Controls.Add(this.cmb_StatisticsDifficulty);
-            this.panel_LeftSideStatistics.Controls.Add(this.lbl_StatisticsDifficulty);
-            this.panel_LeftSideStatistics.Controls.Add(this.cmb_StatisticsSwordsState);
-            this.panel_LeftSideStatistics.Controls.Add(this.lbl_StatisticsSwords);
-            this.panel_LeftSideStatistics.Controls.Add(this.cmb_StatisticsGameState);
-            this.panel_LeftSideStatistics.Controls.Add(this.lbl_StatisticsState);
-            this.panel_LeftSideStatistics.Location = new System.Drawing.Point(3, 3);
-            this.panel_LeftSideStatistics.Name = "panel_LeftSideStatistics";
-            this.panel_LeftSideStatistics.Size = new System.Drawing.Size(239, 116);
-            this.panel_LeftSideStatistics.TabIndex = 0;
-            // 
-            // cmb_StatisticsPlacement
-            // 
-            this.cmb_StatisticsPlacement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_StatisticsPlacement.FormattingEnabled = true;
-            this.cmb_StatisticsPlacement.Location = new System.Drawing.Point(66, 88);
-            this.cmb_StatisticsPlacement.Name = "cmb_StatisticsPlacement";
-            this.cmb_StatisticsPlacement.Size = new System.Drawing.Size(167, 21);
-            this.cmb_StatisticsPlacement.TabIndex = 88;
-            // 
-            // lbl_StatisticsPlacement
-            // 
-            this.lbl_StatisticsPlacement.AutoSize = true;
-            this.lbl_StatisticsPlacement.Location = new System.Drawing.Point(3, 92);
-            this.lbl_StatisticsPlacement.Name = "lbl_StatisticsPlacement";
-            this.lbl_StatisticsPlacement.Size = new System.Drawing.Size(57, 13);
-            this.lbl_StatisticsPlacement.TabIndex = 87;
-            this.lbl_StatisticsPlacement.Text = "Placement";
-            // 
-            // cmb_StatisticsDifficulty
-            // 
-            this.cmb_StatisticsDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_StatisticsDifficulty.FormattingEnabled = true;
-            this.cmb_StatisticsDifficulty.Location = new System.Drawing.Point(66, 61);
-            this.cmb_StatisticsDifficulty.Name = "cmb_StatisticsDifficulty";
-            this.cmb_StatisticsDifficulty.Size = new System.Drawing.Size(167, 21);
-            this.cmb_StatisticsDifficulty.TabIndex = 84;
-            // 
-            // lbl_StatisticsDifficulty
-            // 
-            this.lbl_StatisticsDifficulty.AutoSize = true;
-            this.lbl_StatisticsDifficulty.Location = new System.Drawing.Point(13, 65);
-            this.lbl_StatisticsDifficulty.Name = "lbl_StatisticsDifficulty";
-            this.lbl_StatisticsDifficulty.Size = new System.Drawing.Size(47, 13);
-            this.lbl_StatisticsDifficulty.TabIndex = 83;
-            this.lbl_StatisticsDifficulty.Text = "Difficulty";
-            // 
-            // cmb_StatisticsSwordsState
-            // 
-            this.cmb_StatisticsSwordsState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_StatisticsSwordsState.FormattingEnabled = true;
-            this.cmb_StatisticsSwordsState.Location = new System.Drawing.Point(66, 34);
-            this.cmb_StatisticsSwordsState.Name = "cmb_StatisticsSwordsState";
-            this.cmb_StatisticsSwordsState.Size = new System.Drawing.Size(167, 21);
-            this.cmb_StatisticsSwordsState.TabIndex = 80;
-            // 
-            // lbl_StatisticsSwords
-            // 
-            this.lbl_StatisticsSwords.AutoSize = true;
-            this.lbl_StatisticsSwords.Location = new System.Drawing.Point(18, 38);
-            this.lbl_StatisticsSwords.Name = "lbl_StatisticsSwords";
-            this.lbl_StatisticsSwords.Size = new System.Drawing.Size(42, 13);
-            this.lbl_StatisticsSwords.TabIndex = 79;
-            this.lbl_StatisticsSwords.Text = "Swords";
-            // 
-            // cmb_StatisticsGameState
-            // 
-            this.cmb_StatisticsGameState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_StatisticsGameState.FormattingEnabled = true;
-            this.cmb_StatisticsGameState.Location = new System.Drawing.Point(66, 7);
-            this.cmb_StatisticsGameState.Name = "cmb_StatisticsGameState";
-            this.cmb_StatisticsGameState.Size = new System.Drawing.Size(167, 21);
-            this.cmb_StatisticsGameState.TabIndex = 76;
-            // 
-            // lbl_StatisticsState
-            // 
-            this.lbl_StatisticsState.AutoSize = true;
-            this.lbl_StatisticsState.Location = new System.Drawing.Point(28, 11);
-            this.lbl_StatisticsState.Name = "lbl_StatisticsState";
-            this.lbl_StatisticsState.Size = new System.Drawing.Size(32, 13);
-            this.lbl_StatisticsState.TabIndex = 75;
-            this.lbl_StatisticsState.Text = "State";
-            // 
-            // panel_RightSideStatistics
-            // 
-            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsPedestal);
-            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsPedestal);
-            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsVariation);
-            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsVariation);
-            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsGoal);
-            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsGoal);
-            this.panel_RightSideStatistics.Controls.Add(this.cmb_StatisticsLogic);
-            this.panel_RightSideStatistics.Controls.Add(this.lbl_StatisticsLogic);
-            this.panel_RightSideStatistics.Location = new System.Drawing.Point(248, 3);
-            this.panel_RightSideStatistics.Name = "panel_RightSideStatistics";
-            this.panel_RightSideStatistics.Size = new System.Drawing.Size(239, 116);
-            this.panel_RightSideStatistics.TabIndex = 1;
-            // 
-            // cmb_StatisticsPedestal
-            // 
-            this.cmb_StatisticsPedestal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_StatisticsPedestal.FormattingEnabled = true;
-            this.cmb_StatisticsPedestal.Location = new System.Drawing.Point(66, 89);
-            this.cmb_StatisticsPedestal.Name = "cmb_StatisticsPedestal";
-            this.cmb_StatisticsPedestal.Size = new System.Drawing.Size(167, 21);
-            this.cmb_StatisticsPedestal.TabIndex = 90;
-            // 
-            // lbl_StatisticsPedestal
-            // 
-            this.lbl_StatisticsPedestal.AutoSize = true;
-            this.lbl_StatisticsPedestal.Location = new System.Drawing.Point(12, 91);
-            this.lbl_StatisticsPedestal.Name = "lbl_StatisticsPedestal";
-            this.lbl_StatisticsPedestal.Size = new System.Drawing.Size(48, 13);
-            this.lbl_StatisticsPedestal.TabIndex = 89;
-            this.lbl_StatisticsPedestal.Text = "Pedestal";
-            // 
-            // cmb_StatisticsVariation
-            // 
-            this.cmb_StatisticsVariation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_StatisticsVariation.FormattingEnabled = true;
-            this.cmb_StatisticsVariation.Location = new System.Drawing.Point(66, 61);
-            this.cmb_StatisticsVariation.Name = "cmb_StatisticsVariation";
-            this.cmb_StatisticsVariation.Size = new System.Drawing.Size(167, 21);
-            this.cmb_StatisticsVariation.TabIndex = 86;
-            // 
-            // lbl_StatisticsVariation
-            // 
-            this.lbl_StatisticsVariation.AutoSize = true;
-            this.lbl_StatisticsVariation.Location = new System.Drawing.Point(12, 65);
-            this.lbl_StatisticsVariation.Name = "lbl_StatisticsVariation";
-            this.lbl_StatisticsVariation.Size = new System.Drawing.Size(48, 13);
-            this.lbl_StatisticsVariation.TabIndex = 85;
-            this.lbl_StatisticsVariation.Text = "Variation";
-            // 
-            // cmb_StatisticsGoal
-            // 
-            this.cmb_StatisticsGoal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_StatisticsGoal.FormattingEnabled = true;
-            this.cmb_StatisticsGoal.Location = new System.Drawing.Point(66, 34);
-            this.cmb_StatisticsGoal.Name = "cmb_StatisticsGoal";
-            this.cmb_StatisticsGoal.Size = new System.Drawing.Size(167, 21);
-            this.cmb_StatisticsGoal.TabIndex = 82;
-            // 
-            // lbl_StatisticsGoal
-            // 
-            this.lbl_StatisticsGoal.AutoSize = true;
-            this.lbl_StatisticsGoal.Location = new System.Drawing.Point(31, 38);
-            this.lbl_StatisticsGoal.Name = "lbl_StatisticsGoal";
-            this.lbl_StatisticsGoal.Size = new System.Drawing.Size(29, 13);
-            this.lbl_StatisticsGoal.TabIndex = 81;
-            this.lbl_StatisticsGoal.Text = "Goal";
-            // 
-            // cmb_StatisticsLogic
-            // 
-            this.cmb_StatisticsLogic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_StatisticsLogic.FormattingEnabled = true;
-            this.cmb_StatisticsLogic.Location = new System.Drawing.Point(66, 7);
-            this.cmb_StatisticsLogic.Name = "cmb_StatisticsLogic";
-            this.cmb_StatisticsLogic.Size = new System.Drawing.Size(167, 21);
-            this.cmb_StatisticsLogic.TabIndex = 78;
-            // 
-            // lbl_StatisticsLogic
-            // 
-            this.lbl_StatisticsLogic.AutoSize = true;
-            this.lbl_StatisticsLogic.Location = new System.Drawing.Point(27, 11);
-            this.lbl_StatisticsLogic.Name = "lbl_StatisticsLogic";
-            this.lbl_StatisticsLogic.Size = new System.Drawing.Size(33, 13);
-            this.lbl_StatisticsLogic.TabIndex = 77;
-            this.lbl_StatisticsLogic.Text = "Logic";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lbl_RecordCount);
-            this.panel2.Location = new System.Drawing.Point(3, 125);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(482, 22);
-            this.panel2.TabIndex = 10;
-            // 
-            // lbl_RecordCount
-            // 
-            this.lbl_RecordCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_RecordCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_RecordCount.Location = new System.Drawing.Point(0, 0);
-            this.lbl_RecordCount.Name = "lbl_RecordCount";
-            this.lbl_RecordCount.Size = new System.Drawing.Size(482, 22);
-            this.lbl_RecordCount.TabIndex = 0;
-            this.lbl_RecordCount.Text = "Showing data for 0 games.";
-            this.lbl_RecordCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // grp_PersonalBest
-            // 
-            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestFairieRevivals);
-            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestFairieRevivalsLabel);
-            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestDeaths);
-            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestDeathsLabel);
-            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestItems);
-            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestItemsLabel);
-            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestTimeLabel);
-            this.grp_PersonalBest.Controls.Add(this.lbl_PersonalBestTime);
-            this.grp_PersonalBest.Location = new System.Drawing.Point(3, 153);
-            this.grp_PersonalBest.Name = "grp_PersonalBest";
-            this.grp_PersonalBest.Size = new System.Drawing.Size(157, 100);
-            this.grp_PersonalBest.TabIndex = 2;
-            this.grp_PersonalBest.TabStop = false;
-            this.grp_PersonalBest.Text = "Personal Best";
-            // 
-            // lbl_PersonalBestFairieRevivals
-            // 
-            this.lbl_PersonalBestFairieRevivals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_PersonalBestFairieRevivals.AutoSize = true;
-            this.lbl_PersonalBestFairieRevivals.Location = new System.Drawing.Point(135, 82);
-            this.lbl_PersonalBestFairieRevivals.Name = "lbl_PersonalBestFairieRevivals";
-            this.lbl_PersonalBestFairieRevivals.Size = new System.Drawing.Size(13, 13);
-            this.lbl_PersonalBestFairieRevivals.TabIndex = 7;
-            this.lbl_PersonalBestFairieRevivals.Text = "0";
-            // 
-            // lbl_PersonalBestFairieRevivalsLabel
-            // 
-            this.lbl_PersonalBestFairieRevivalsLabel.AutoSize = true;
-            this.lbl_PersonalBestFairieRevivalsLabel.Location = new System.Drawing.Point(6, 82);
-            this.lbl_PersonalBestFairieRevivalsLabel.Name = "lbl_PersonalBestFairieRevivalsLabel";
-            this.lbl_PersonalBestFairieRevivalsLabel.Size = new System.Drawing.Size(76, 13);
-            this.lbl_PersonalBestFairieRevivalsLabel.TabIndex = 6;
-            this.lbl_PersonalBestFairieRevivalsLabel.Text = "Fairie Revivals";
-            // 
-            // lbl_PersonalBestDeaths
-            // 
-            this.lbl_PersonalBestDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_PersonalBestDeaths.AutoSize = true;
-            this.lbl_PersonalBestDeaths.Location = new System.Drawing.Point(135, 60);
-            this.lbl_PersonalBestDeaths.Name = "lbl_PersonalBestDeaths";
-            this.lbl_PersonalBestDeaths.Size = new System.Drawing.Size(13, 13);
-            this.lbl_PersonalBestDeaths.TabIndex = 5;
-            this.lbl_PersonalBestDeaths.Text = "0";
-            // 
-            // lbl_PersonalBestDeathsLabel
-            // 
-            this.lbl_PersonalBestDeathsLabel.AutoSize = true;
-            this.lbl_PersonalBestDeathsLabel.Location = new System.Drawing.Point(6, 60);
-            this.lbl_PersonalBestDeathsLabel.Name = "lbl_PersonalBestDeathsLabel";
-            this.lbl_PersonalBestDeathsLabel.Size = new System.Drawing.Size(41, 13);
-            this.lbl_PersonalBestDeathsLabel.TabIndex = 4;
-            this.lbl_PersonalBestDeathsLabel.Text = "Deaths";
-            // 
-            // lbl_PersonalBestItems
-            // 
-            this.lbl_PersonalBestItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_PersonalBestItems.AutoSize = true;
-            this.lbl_PersonalBestItems.Location = new System.Drawing.Point(112, 38);
-            this.lbl_PersonalBestItems.Name = "lbl_PersonalBestItems";
-            this.lbl_PersonalBestItems.Size = new System.Drawing.Size(36, 13);
-            this.lbl_PersonalBestItems.TabIndex = 3;
-            this.lbl_PersonalBestItems.Text = "0/216";
-            // 
-            // lbl_PersonalBestItemsLabel
-            // 
-            this.lbl_PersonalBestItemsLabel.AutoSize = true;
-            this.lbl_PersonalBestItemsLabel.Location = new System.Drawing.Point(6, 38);
-            this.lbl_PersonalBestItemsLabel.Name = "lbl_PersonalBestItemsLabel";
-            this.lbl_PersonalBestItemsLabel.Size = new System.Drawing.Size(32, 13);
-            this.lbl_PersonalBestItemsLabel.TabIndex = 2;
-            this.lbl_PersonalBestItemsLabel.Text = "Items";
-            // 
-            // lbl_PersonalBestTimeLabel
-            // 
-            this.lbl_PersonalBestTimeLabel.AutoSize = true;
-            this.lbl_PersonalBestTimeLabel.Location = new System.Drawing.Point(6, 16);
-            this.lbl_PersonalBestTimeLabel.Name = "lbl_PersonalBestTimeLabel";
-            this.lbl_PersonalBestTimeLabel.Size = new System.Drawing.Size(30, 13);
-            this.lbl_PersonalBestTimeLabel.TabIndex = 0;
-            this.lbl_PersonalBestTimeLabel.Text = "Time";
-            // 
-            // lbl_PersonalBestTime
-            // 
-            this.lbl_PersonalBestTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_PersonalBestTime.AutoSize = true;
-            this.lbl_PersonalBestTime.Location = new System.Drawing.Point(90, 16);
-            this.lbl_PersonalBestTime.Name = "lbl_PersonalBestTime";
-            this.lbl_PersonalBestTime.Size = new System.Drawing.Size(58, 13);
-            this.lbl_PersonalBestTime.TabIndex = 1;
-            this.lbl_PersonalBestTime.Text = "0:00:00.00";
-            // 
-            // grp_Average
-            // 
-            this.grp_Average.Controls.Add(this.lbl_AveragesFairieRevivals);
-            this.grp_Average.Controls.Add(this.lbl_AveragesFairieRevivalsLabel);
-            this.grp_Average.Controls.Add(this.lbl_AveragesDeaths);
-            this.grp_Average.Controls.Add(this.lbl_AveragesDeathsLabel);
-            this.grp_Average.Controls.Add(this.lbl_AveragesItems);
-            this.grp_Average.Controls.Add(this.lbl_AveragesItemsLabel);
-            this.grp_Average.Controls.Add(this.lbl_AveragesTimeLabel);
-            this.grp_Average.Controls.Add(this.lbl_AveragesTime);
-            this.grp_Average.Location = new System.Drawing.Point(166, 153);
-            this.grp_Average.Name = "grp_Average";
-            this.grp_Average.Size = new System.Drawing.Size(157, 100);
-            this.grp_Average.TabIndex = 8;
-            this.grp_Average.TabStop = false;
-            this.grp_Average.Text = "Averages";
-            // 
-            // lbl_AveragesFairieRevivals
-            // 
-            this.lbl_AveragesFairieRevivals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_AveragesFairieRevivals.AutoSize = true;
-            this.lbl_AveragesFairieRevivals.Location = new System.Drawing.Point(135, 82);
-            this.lbl_AveragesFairieRevivals.Name = "lbl_AveragesFairieRevivals";
-            this.lbl_AveragesFairieRevivals.Size = new System.Drawing.Size(13, 13);
-            this.lbl_AveragesFairieRevivals.TabIndex = 7;
-            this.lbl_AveragesFairieRevivals.Text = "0";
-            // 
-            // lbl_AveragesFairieRevivalsLabel
-            // 
-            this.lbl_AveragesFairieRevivalsLabel.AutoSize = true;
-            this.lbl_AveragesFairieRevivalsLabel.Location = new System.Drawing.Point(6, 82);
-            this.lbl_AveragesFairieRevivalsLabel.Name = "lbl_AveragesFairieRevivalsLabel";
-            this.lbl_AveragesFairieRevivalsLabel.Size = new System.Drawing.Size(76, 13);
-            this.lbl_AveragesFairieRevivalsLabel.TabIndex = 6;
-            this.lbl_AveragesFairieRevivalsLabel.Text = "Fairie Revivals";
-            // 
-            // lbl_AveragesDeaths
-            // 
-            this.lbl_AveragesDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_AveragesDeaths.AutoSize = true;
-            this.lbl_AveragesDeaths.Location = new System.Drawing.Point(135, 60);
-            this.lbl_AveragesDeaths.Name = "lbl_AveragesDeaths";
-            this.lbl_AveragesDeaths.Size = new System.Drawing.Size(13, 13);
-            this.lbl_AveragesDeaths.TabIndex = 5;
-            this.lbl_AveragesDeaths.Text = "0";
-            // 
-            // lbl_AveragesDeathsLabel
-            // 
-            this.lbl_AveragesDeathsLabel.AutoSize = true;
-            this.lbl_AveragesDeathsLabel.Location = new System.Drawing.Point(6, 60);
-            this.lbl_AveragesDeathsLabel.Name = "lbl_AveragesDeathsLabel";
-            this.lbl_AveragesDeathsLabel.Size = new System.Drawing.Size(41, 13);
-            this.lbl_AveragesDeathsLabel.TabIndex = 4;
-            this.lbl_AveragesDeathsLabel.Text = "Deaths";
-            // 
-            // lbl_AveragesItems
-            // 
-            this.lbl_AveragesItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_AveragesItems.AutoSize = true;
-            this.lbl_AveragesItems.Location = new System.Drawing.Point(112, 38);
-            this.lbl_AveragesItems.Name = "lbl_AveragesItems";
-            this.lbl_AveragesItems.Size = new System.Drawing.Size(36, 13);
-            this.lbl_AveragesItems.TabIndex = 3;
-            this.lbl_AveragesItems.Text = "0/216";
-            // 
-            // lbl_AveragesItemsLabel
-            // 
-            this.lbl_AveragesItemsLabel.AutoSize = true;
-            this.lbl_AveragesItemsLabel.Location = new System.Drawing.Point(6, 38);
-            this.lbl_AveragesItemsLabel.Name = "lbl_AveragesItemsLabel";
-            this.lbl_AveragesItemsLabel.Size = new System.Drawing.Size(32, 13);
-            this.lbl_AveragesItemsLabel.TabIndex = 2;
-            this.lbl_AveragesItemsLabel.Text = "Items";
-            // 
-            // lbl_AveragesTimeLabel
-            // 
-            this.lbl_AveragesTimeLabel.AutoSize = true;
-            this.lbl_AveragesTimeLabel.Location = new System.Drawing.Point(6, 16);
-            this.lbl_AveragesTimeLabel.Name = "lbl_AveragesTimeLabel";
-            this.lbl_AveragesTimeLabel.Size = new System.Drawing.Size(30, 13);
-            this.lbl_AveragesTimeLabel.TabIndex = 0;
-            this.lbl_AveragesTimeLabel.Text = "Time";
-            // 
-            // lbl_AveragesTime
-            // 
-            this.lbl_AveragesTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_AveragesTime.AutoSize = true;
-            this.lbl_AveragesTime.Location = new System.Drawing.Point(90, 16);
-            this.lbl_AveragesTime.Name = "lbl_AveragesTime";
-            this.lbl_AveragesTime.Size = new System.Drawing.Size(58, 13);
-            this.lbl_AveragesTime.TabIndex = 1;
-            this.lbl_AveragesTime.Text = "0:00:00.00";
-            // 
-            // grp_Totals
-            // 
-            this.grp_Totals.Controls.Add(this.lbl_TotalsFairieRevivals);
-            this.grp_Totals.Controls.Add(this.lbl_TotalsFairieRevivalsLabel);
-            this.grp_Totals.Controls.Add(this.lbl_TotalsDeaths);
-            this.grp_Totals.Controls.Add(this.lbl_TotalsDeathsLabel);
-            this.grp_Totals.Controls.Add(this.lbl_TotalsItems);
-            this.grp_Totals.Controls.Add(this.lbl_TotalsItemsLabel);
-            this.grp_Totals.Controls.Add(this.lbl_TotalsTimeLabel);
-            this.grp_Totals.Controls.Add(this.lbl_TotalsTime);
-            this.grp_Totals.Location = new System.Drawing.Point(329, 153);
-            this.grp_Totals.Name = "grp_Totals";
-            this.grp_Totals.Size = new System.Drawing.Size(157, 100);
-            this.grp_Totals.TabIndex = 9;
-            this.grp_Totals.TabStop = false;
-            this.grp_Totals.Text = "Totals";
-            // 
-            // lbl_TotalsFairieRevivals
-            // 
-            this.lbl_TotalsFairieRevivals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_TotalsFairieRevivals.AutoSize = true;
-            this.lbl_TotalsFairieRevivals.Location = new System.Drawing.Point(135, 82);
-            this.lbl_TotalsFairieRevivals.Name = "lbl_TotalsFairieRevivals";
-            this.lbl_TotalsFairieRevivals.Size = new System.Drawing.Size(13, 13);
-            this.lbl_TotalsFairieRevivals.TabIndex = 7;
-            this.lbl_TotalsFairieRevivals.Text = "0";
-            // 
-            // lbl_TotalsFairieRevivalsLabel
-            // 
-            this.lbl_TotalsFairieRevivalsLabel.AutoSize = true;
-            this.lbl_TotalsFairieRevivalsLabel.Location = new System.Drawing.Point(6, 82);
-            this.lbl_TotalsFairieRevivalsLabel.Name = "lbl_TotalsFairieRevivalsLabel";
-            this.lbl_TotalsFairieRevivalsLabel.Size = new System.Drawing.Size(76, 13);
-            this.lbl_TotalsFairieRevivalsLabel.TabIndex = 6;
-            this.lbl_TotalsFairieRevivalsLabel.Text = "Fairie Revivals";
-            // 
-            // lbl_TotalsDeaths
-            // 
-            this.lbl_TotalsDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_TotalsDeaths.AutoSize = true;
-            this.lbl_TotalsDeaths.Location = new System.Drawing.Point(135, 60);
-            this.lbl_TotalsDeaths.Name = "lbl_TotalsDeaths";
-            this.lbl_TotalsDeaths.Size = new System.Drawing.Size(13, 13);
-            this.lbl_TotalsDeaths.TabIndex = 5;
-            this.lbl_TotalsDeaths.Text = "0";
-            // 
-            // lbl_TotalsDeathsLabel
-            // 
-            this.lbl_TotalsDeathsLabel.AutoSize = true;
-            this.lbl_TotalsDeathsLabel.Location = new System.Drawing.Point(6, 60);
-            this.lbl_TotalsDeathsLabel.Name = "lbl_TotalsDeathsLabel";
-            this.lbl_TotalsDeathsLabel.Size = new System.Drawing.Size(41, 13);
-            this.lbl_TotalsDeathsLabel.TabIndex = 4;
-            this.lbl_TotalsDeathsLabel.Text = "Deaths";
-            // 
-            // lbl_TotalsItems
-            // 
-            this.lbl_TotalsItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_TotalsItems.AutoSize = true;
-            this.lbl_TotalsItems.Location = new System.Drawing.Point(135, 38);
-            this.lbl_TotalsItems.Name = "lbl_TotalsItems";
-            this.lbl_TotalsItems.Size = new System.Drawing.Size(13, 13);
-            this.lbl_TotalsItems.TabIndex = 3;
-            this.lbl_TotalsItems.Text = "0";
-            // 
-            // lbl_TotalsItemsLabel
-            // 
-            this.lbl_TotalsItemsLabel.AutoSize = true;
-            this.lbl_TotalsItemsLabel.Location = new System.Drawing.Point(6, 38);
-            this.lbl_TotalsItemsLabel.Name = "lbl_TotalsItemsLabel";
-            this.lbl_TotalsItemsLabel.Size = new System.Drawing.Size(32, 13);
-            this.lbl_TotalsItemsLabel.TabIndex = 2;
-            this.lbl_TotalsItemsLabel.Text = "Items";
-            // 
-            // lbl_TotalsTimeLabel
-            // 
-            this.lbl_TotalsTimeLabel.AutoSize = true;
-            this.lbl_TotalsTimeLabel.Location = new System.Drawing.Point(6, 16);
-            this.lbl_TotalsTimeLabel.Name = "lbl_TotalsTimeLabel";
-            this.lbl_TotalsTimeLabel.Size = new System.Drawing.Size(30, 13);
-            this.lbl_TotalsTimeLabel.TabIndex = 0;
-            this.lbl_TotalsTimeLabel.Text = "Time";
-            // 
-            // lbl_TotalsTime
-            // 
-            this.lbl_TotalsTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_TotalsTime.AutoSize = true;
-            this.lbl_TotalsTime.Location = new System.Drawing.Point(90, 16);
-            this.lbl_TotalsTime.Name = "lbl_TotalsTime";
-            this.lbl_TotalsTime.Size = new System.Drawing.Size(58, 13);
-            this.lbl_TotalsTime.TabIndex = 1;
-            this.lbl_TotalsTime.Text = "0:00:00.00";
+            // agahnimDataGridViewCheckBoxColumn
+            // 
+            this.agahnimDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.agahnimDataGridViewCheckBoxColumn.DataPropertyName = "Agahnim";
+            this.agahnimDataGridViewCheckBoxColumn.HeaderText = "Agahnim";
+            this.agahnimDataGridViewCheckBoxColumn.Name = "agahnimDataGridViewCheckBoxColumn";
+            this.agahnimDataGridViewCheckBoxColumn.Width = 54;
             // 
             // TimeTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 290);
+            this.ClientSize = new System.Drawing.Size(504, 314);
             this.Controls.Add(this.tab_Pages);
             this.Name = "TimeTracker";
             this.Text = "Link to the Past Randomizer Time Tracker";
@@ -1159,7 +1203,6 @@
             this.panel1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_TimeTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_TimeTable)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.flowLayout_Statistics.ResumeLayout(false);
             this.panel_LeftSideStatistics.ResumeLayout(false);
@@ -1173,6 +1216,7 @@
             this.grp_Average.PerformLayout();
             this.grp_Totals.ResumeLayout(false);
             this.grp_Totals.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_TimeTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1234,18 +1278,6 @@
         private System.Windows.Forms.Label lbl_StatisticsLogic;
         private System.Windows.Forms.CheckBox chk_Pedestal;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeTakenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deathsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fairieRevivalsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gameStateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn swordStateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn difficultyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn logicDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn variationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placementDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn pedestalDataGridViewCheckBoxColumn;
         private System.Windows.Forms.ComboBox cmb_StatisticsPedestal;
         private System.Windows.Forms.Label lbl_StatisticsPedestal;
         private System.Windows.Forms.GroupBox grp_PersonalBest;
@@ -1277,6 +1309,22 @@
         private System.Windows.Forms.Label lbl_TotalsTime;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_RecordCount;
+        private System.Windows.Forms.CheckBox chk_Agahnim;
+        private System.Windows.Forms.ComboBox cmb_StatisticsAgahnim;
+        private System.Windows.Forms.Label lbl_StatisticsAgahnim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeTakenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deathsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fairieRevivalsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gameStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn swordStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn difficultyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logicDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn variationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placementDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn pedestalDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn agahnimDataGridViewCheckBoxColumn;
     }
 }
 
